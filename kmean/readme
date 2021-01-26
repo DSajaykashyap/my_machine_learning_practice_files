@@ -1,1 +1,19 @@
+This technique partitions the data set into unique homogeneous clusters whose observations are similar to each other but different than other clusters.
+The resultant clusters remain mutually exclusive, i.e., non-overlapping clusters.
 
+In this technique, "K" refers to the number of cluster among which we wish to partition the data.
+Every cluster has a centroid. The name "k means" is derived from the fact that cluster centroids are computed as the mean distance of observations assigned to each cluster.
+
+This k value k is given by the user. It's a hard clustering technique, i.e., one observation gets classified into exactly one cluster.
+
+Technically, the k means technique tries to classify the observations into K clusters such that the total within cluster variation is as small as possible. 
+Let C denote a cluster. k denotes the number of clusters. 
+
+
+Now, we fairly understand what goes behind k means clustering. But how does it start ? Practically, it takes the following steps:
+
+Let's say the value of k = 2. At first, the clustering technique will assign two centroids randomly in the set of observations.
+Then, it will start partitioning the observations based on their distance from the centroids. Observations relatively closer to any centroid will get partitioned accordingly.
+Then, based on the number of iterations (after how many times we want the algorithm to converge) we've given, the cluster centroids will get recentered in every iteration. With this, the algorithm will try to continually optimize for the lowest within cluster variation.
+Based on the newly assigned centroids, assign each observation falling closest to the new centroids.
+This process continues until the cluster centers do not change or the stopping criterion is reached.
